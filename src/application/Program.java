@@ -10,17 +10,22 @@ public class Program {
 		
 		System.out.print("Quantos números você vai digitar: ");
 		int n = sc.nextInt();
-				
 		double [] vect = new double [n];
+		// teste de mensagem v2
+		char msgNeg = 'n';
 		
 		for (int i=0;i<n;i++) {
 			System.out.print("Digite o numero: ");
-			vect [i] = sc.nextInt();			
+			vect [i] = sc.nextInt();		
+			// teste de mensagem v2
+			if (vect[i] < 0) {
+				msgNeg = 'y';
+			}
 		}
-		
-		double soma = 0.0;
-		
-		System.out.println("Números Negativos:");
+		// teste de mensagem v2
+		if (msgNeg == 'y') {
+			System.out.println("Números Negativos:");
+		}
 		
 		for (int i=0;i<n;i++) {
 			if (vect[i] < 0) {
@@ -28,6 +33,8 @@ public class Program {
 			}
 		}
 		
+		double soma = 0.0;
+
 		System.out.print("VALORES: ");
 		
 		for (int i=0;i<n;i++) {
@@ -35,9 +42,7 @@ public class Program {
 			System.out.printf("%.1f ",vect[i]);
 		}
 		
-		double media = 0.0;
-		
-		media = soma / n;
+		double media = soma / n;
 		
 		System.out.println();
 		System.out.printf("A soma é: %.2f%n", soma);
